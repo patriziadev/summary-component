@@ -1,0 +1,7 @@
+body {
+  font-family: "Hanken Grotesk", sans-serif; }
+  body #wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
