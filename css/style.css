@@ -4,4 +4,13 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    width: 50%;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 5px 5px 30px -20px #1125d4; }
+  body .attribution {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0); }
