@@ -1,5 +1,6 @@
 body {
-  font-family: "Hanken Grotesk", sans-serif; }
+  font-family: "Hanken Grotesk", sans-serif;
+  color: #303b5a; }
   body #wrapper {
     position: fixed;
     top: 50%;
@@ -8,7 +9,78 @@ body {
     width: 50%;
     border-radius: 20px;
     background: white;
-    box-shadow: 5px 5px 30px -20px #1125d4; }
+    box-shadow: 5px 5px 30px -20px #1125d4;
+    display: flex;
+    flex-direction: row; }
+    body #wrapper #result {
+      width: 50%;
+      padding: 2rem; }
+    body #wrapper #summary {
+      width: 50%;
+      padding: 2rem; }
+      body #wrapper #summary h1 {
+        font-size: large; }
+      body #wrapper #summary .category.reaction {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin: 0.8em 0;
+        background-color: rgba(255, 87, 87, 0.1);
+        border-radius: 10px; }
+        body #wrapper #summary .category.reaction div:first-child {
+          color: #ff5757; }
+        body #wrapper #summary .category.reaction img {
+          vertical-align: text-top; }
+      body #wrapper #summary .category.memory {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin: 0.8em 0;
+        background-color: rgba(255, 176, 31, 0.1);
+        border-radius: 10px; }
+        body #wrapper #summary .category.memory div:first-child {
+          color: #ffb01f; }
+        body #wrapper #summary .category.memory img {
+          vertical-align: text-top; }
+      body #wrapper #summary .category.verbal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin: 0.8em 0;
+        background-color: rgba(0, 189, 145, 0.1);
+        border-radius: 10px; }
+        body #wrapper #summary .category.verbal div:first-child {
+          color: #00bd91; }
+        body #wrapper #summary .category.verbal img {
+          vertical-align: text-top; }
+      body #wrapper #summary .category.visual {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin: 0.8em 0;
+        background-color: rgba(17, 37, 212, 0.1);
+        border-radius: 10px; }
+        body #wrapper #summary .category.visual div:first-child {
+          color: #1125d4; }
+        body #wrapper #summary .category.visual img {
+          vertical-align: text-top; }
+      body #wrapper #summary button {
+        width: 100%;
+        color: white;
+        background-color: #303b5a;
+        border: none;
+        padding: 0.8em;
+        border-radius: 20px;
+        margin-top: 1.5em;
+        transition: all 0.5s ease-in-out; }
+        body #wrapper #summary button:hover {
+          background-color: #4e21ca;
+          background-image: linear-gradient(#7857ff, #4e21ca);
+          cursor: pointer; }
   body .attribution {
     position: absolute;
     bottom: 0;

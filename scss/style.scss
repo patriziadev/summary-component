@@ -21,8 +21,30 @@ $fontSize: 18px;
 $paragraphFont: "Hanken Grotesk", sans-serif;
 
 // styles
+$cardPadding: 2rem;
+
+@mixin summaryItem($category-color) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0.8em 0;
+    background-color: rgba($category-color, 0.1);
+    border-radius: 10px;
+
+    div:first-child {
+        color: $category-color;
+    }
+
+    img {
+        vertical-align: text-top;
+    }
+}
+
 body {
     font-family: $paragraphFont;
+    color: $darkGrayBlue;
+
     #wrapper {
         // center position
         position: fixed;
@@ -34,6 +56,58 @@ body {
         border-radius: 20px;
         background: $white;
         box-shadow: 5px 5px 30px -20px $cobaltBlue;
+
+        display: flex;
+        flex-direction: row;
+
+        #result {
+            width: 50%;
+            padding: $cardPadding;
+        }
+
+        #summary {
+            width: 50%;
+            padding: $cardPadding;
+
+            h1 {
+                font-size: large;
+            }
+
+            .category {
+                &.reaction {
+                    @include summaryItem($lightRed);
+                }
+                &.memory {
+                    @include summaryItem($orangeyYellow);
+                }
+                &.verbal {
+                    @include summaryItem($greenTeal);
+                }
+                &.visual {
+                    @include summaryItem($cobaltBlue);
+                }
+            }
+
+            button {
+                width: 100%;
+                color: $white;
+                background-color: $darkGrayBlue;
+                border: none;
+                padding: 0.8em;
+                border-radius: 20px;
+                margin-top: 1.5em;
+                transition: all 0.5s ease-in-out;
+
+                &:hover {
+                    background-color: $violetBlue;
+                    background-image: linear-gradient(
+                        $lightSlateBlue,
+                        $violetBlue
+                    );
+                    cursor: pointer;
+                }
+            }
+        }
     }
 
     .attribution {
