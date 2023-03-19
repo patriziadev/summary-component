@@ -13,7 +13,7 @@ $lightSlateBlue: hsl(252, 100%, 67%);
 $lightRoyalBlue: hsl(241, 81%, 54%);
 
 // gradiend colors: circle
-$violetBlue: hsla(256, 72%, 46%, 1);
+$violetBlue: rgba(78, 33, 202, 1);
 $persianBlue: hsla(241, 72%, 46%, 0);
 
 // fonts
@@ -39,6 +39,10 @@ $cardPadding: 2rem;
     img {
         vertical-align: text-top;
     }
+}
+
+@mixin violetLinearGradient {
+    background-image: linear-gradient($lightSlateBlue, $lightRoyalBlue);
 }
 
 body {
@@ -99,11 +103,7 @@ body {
                 transition: all 0.5s ease-in-out;
 
                 &:hover {
-                    background-color: $violetBlue;
-                    background-image: linear-gradient(
-                        $lightSlateBlue,
-                        $violetBlue
-                    );
+                    @include violetLinearGradient();
                     cursor: pointer;
                 }
             }

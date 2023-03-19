@@ -78,8 +78,7 @@ body {
         margin-top: 1.5em;
         transition: all 0.5s ease-in-out; }
         body #wrapper #summary button:hover {
-          background-color: #4e21ca;
-          background-image: linear-gradient(#7857ff, #4e21ca);
+          background-image: linear-gradient(#7857ff, #2e2be9);
           cursor: pointer; }
   body .attribution {
     position: absolute;
