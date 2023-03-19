@@ -1,25 +1,54 @@
 body {
   font-family: "Hanken Grotesk", sans-serif;
+  font-size: 18px;
   color: #303b5a; }
   body #wrapper {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
     border-radius: 20px;
     background: white;
     box-shadow: 5px 5px 30px -20px #1125d4;
     display: flex;
     flex-direction: row; }
     body #wrapper #result {
+      background-image: linear-gradient(#7857ff, #2e2be9);
       width: 50%;
-      padding: 2rem; }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      border-radius: 20px;
+      color: #c8c7ff;
+      text-align: center; }
+      body #wrapper #result h1 {
+        font-size: larger; }
+      body #wrapper #result h2 {
+        color: white;
+        font-size: xx-large; }
+      body #wrapper #result #resultScore {
+        background-image: linear-gradient(#4e21ca, rgba(36, 33, 202, 0));
+        border-radius: 50%;
+        width: 10em;
+        height: 10em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        body #wrapper #result #resultScore #score {
+          color: white;
+          font-size: xxx-large;
+          font-weight: bold; }
     body #wrapper #summary {
       width: 50%;
-      padding: 2rem; }
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
       body #wrapper #summary h1 {
-        font-size: large; }
+        font-size: larger; }
       body #wrapper #summary .category.reaction {
         display: flex;
         justify-content: space-between;
@@ -71,6 +100,7 @@ body {
       body #wrapper #summary button {
         width: 100%;
         color: white;
+        font-size: 18px;
         background-color: #303b5a;
         border: none;
         padding: 0.8em;
@@ -84,4 +114,15 @@ body {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 0); }
+    transform: translate(-50%, 0);
+    padding: 15px 0;
+    z-index: -10; }
+  @media screen and (max-width: 991px) {
+    body #wrapper {
+      flex-direction: column; }
+      body #wrapper #result,
+      body #wrapper #summary {
+        min-width: 25em; } }
+  @media screen and (max-width: 778px) {
+    body #wrapper {
+      font-size: small; } }

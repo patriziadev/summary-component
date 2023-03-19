@@ -22,6 +22,11 @@ $paragraphFont: "Hanken Grotesk", sans-serif;
 
 // styles
 $cardPadding: 2rem;
+$cardBorderRadius: 20px;
+
+@mixin h1 {
+    font-size: larger;
+}
 
 @mixin summaryItem($category-color) {
     display: flex;
@@ -47,6 +52,7 @@ $cardPadding: 2rem;
 
 body {
     font-family: $paragraphFont;
+    font-size: $fontSize;
     color: $darkGrayBlue;
 
     #wrapper {
@@ -55,9 +61,7 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
-        width: 50%;
-        border-radius: 20px;
+        border-radius: $cardBorderRadius;
         background: $white;
         box-shadow: 5px 5px 30px -20px $cobaltBlue;
 
@@ -65,16 +69,53 @@ body {
         flex-direction: row;
 
         #result {
+            @include violetLinearGradient();
             width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             padding: $cardPadding;
+            border-radius: $cardBorderRadius;
+            color: $lightLavender;
+            text-align: center;
+
+            h1 {
+                @include h1();
+            }
+
+            h2 {
+                color: $white;
+                font-size: xx-large;
+            }
+
+            #resultScore {
+                background-image: linear-gradient($violetBlue, $persianBlue);
+                border-radius: 50%;
+                width: 10em;
+                height: 10em;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                #score {
+                    color: $white;
+                    font-size: xxx-large;
+                    font-weight: bold;
+                }
+            }
         }
 
         #summary {
             width: 50%;
             padding: $cardPadding;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
             h1 {
-                font-size: large;
+                @include h1();
             }
 
             .category {
@@ -95,6 +136,7 @@ body {
             button {
                 width: 100%;
                 color: $white;
+                font-size: $fontSize;
                 background-color: $darkGrayBlue;
                 border: none;
                 padding: 0.8em;
@@ -115,5 +157,24 @@ body {
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 0);
+        padding: 15px 0;
+        z-index: -10;
+    }
+
+    @media screen and (max-width: 991px) {
+        #wrapper {
+            flex-direction: column;
+
+            #result,
+            #summary {
+                min-width: 25em;
+            }
+        }
+    }
+
+    @media screen and (max-width: 778px) {
+        #wrapper {
+            font-size: small;
+        }
     }
 }
