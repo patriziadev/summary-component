@@ -1,13 +1,13 @@
 {
     "name": "summary-component",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "summary component is an easy project by FrontendMentor",
     "main": "index.js",
     "scripts": {
         "test": "test",
         "scss": "node-sass --watch scss -o css"
     },
-    "author": "Zabol",
+    "author": "ZABOL",
     "license": "ISC",
     "dependencies": {
         "node-sass": "^8.0.0"
